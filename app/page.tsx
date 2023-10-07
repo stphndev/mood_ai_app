@@ -1,10 +1,8 @@
 import { auth } from '@clerk/nextjs';
 import Link from 'next/link';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
+import { Button, Typography, Box }from '@mui/joy';
 
-export default function Home() {
+const Home = async() => {
   const { userId } = await auth();
   let href = userId ? '/journal' : '/new-user';
 
@@ -26,10 +24,10 @@ export default function Home() {
           mx: 'auto',
         }}
       >
-        <Typography variant="h3" sx={{ mb: 4, color: 'white' }}>
+        <Typography level="h1" sx={{ mb: 4, color: 'white' }}>
           The best Journal app, period.
         </Typography>
-        <Typography variant="body1" sx={{ mb: 4, color: 'rgba(255, 255, 255, 0.6)' }}>
+        <Typography level="text-lg" sx={{ mb: 4, color: 'rgba(255, 255, 255, 0.6)' }}>
           This is the best app for tracking your mood throughout your life. All you have to do is be honest.
         </Typography>
         <div>
@@ -43,3 +41,5 @@ export default function Home() {
     </Box>
   );
 }
+
+export default Home

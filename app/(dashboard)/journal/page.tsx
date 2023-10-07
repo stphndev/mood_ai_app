@@ -13,8 +13,8 @@ const getEntries = async () => {
     orderBy: {
       createdAt: 'desc',
     },
+  
   })
-
   return entries
 }
 

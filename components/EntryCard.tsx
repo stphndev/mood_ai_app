@@ -1,14 +1,32 @@
+import { Box, Card, List, ListItem } from '@mui/joy';
+
 const EntryCard = ({ entry }) => {
+  const date = new Date(entry.createdAt).toDateString();
 
-    const date = new Date(entry.createdAt).toDateString()
+  return (
+    <Box
+      sx={{
+        overflow: 'hidden',
+        borderRadius: '8px',
+        backgroundColor: '#fff',
+        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+        transition: 'background-color 0.3s',
+        '&:hover': {
+          backgroundColor: '#f0f0f0',
+          transform: 'scale(1.05)',
+        },
+      }}
+    >
+    <Card>
+        <List>
+            <ListItem>{date}</ListItem>
+            <ListItem>Summary</ListItem>
+            <ListItem>Mood</ListItem>
+        </List>
+    </Card>
+    
+    </Box>
+  );
+};
 
-    return (
-    <div className="divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow">
-      <div className="px-4 py-5 sm:px-6">{date}</div>
-      <div className="px-4 py-5 sm:p-6">summary</div>
-      <div className="px-4 py-4 sm:px-6">mood</div>
-    </div>
-    )
-  }
-
-  export default EntryCard
+export default EntryCard;

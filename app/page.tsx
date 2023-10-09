@@ -19,7 +19,7 @@ const Home = async() => {
     >
       <Box
         sx={{
-          width: '100%',
+          width: '100vw',
           maxWidth: '600px',
           mx: 'auto',
         }}
@@ -32,7 +32,7 @@ const Home = async() => {
         </Typography>
         <div>
           <Link href={href}>
-            <Button variant="contained" sx={{ backgroundColor: '#3498db', fontSize: '1.6rem', color: 'white' }}>
+            <Button variant="outlined" sx={{ backgroundColor: '#3498db', fontSize: '1.6rem', color: 'white' }}>
               Get Started
             </Button>
           </Link>

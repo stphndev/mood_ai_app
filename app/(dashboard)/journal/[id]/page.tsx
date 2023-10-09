@@ -1,6 +1,7 @@
 import Editor from '@/components/Editor'
 import { getUserFromClerkID } from '@/utils/auth'
 import { prisma } from '@/utils/db'
+import { Box } from '@mui/joy';
 
 const getEntry = async (id) => {
     const user = await getUserFromClerkID()
@@ -23,9 +24,9 @@ const EntryPage = async({params}) => {
     const entry = await getEntry(params.id)
     
     return (
-        <div className='w-full h-full'>
+        <Box sx={{ width: '100%', height: '100%'}}>
                <Editor entry={entry}/>
-        </div>
+        </Box>
     )
 }
 
